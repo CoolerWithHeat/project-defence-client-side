@@ -6,7 +6,6 @@ import SocialAuth from "socialAuthentication"
 import './assets/css/authentication.scss'
 import getHost from 'host';
 
-
 const host = getHost()
 
 export const FirstLayerValdation = ()=>{
