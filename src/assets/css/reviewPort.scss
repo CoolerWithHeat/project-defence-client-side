@@ -1,0 +1,75 @@
+#InsideCollection{
+
+   #AddIconClosure{
+    float: right;
+    cursor: pointer;
+    @media (min-width:460px){
+        margin-right: 50px;
+    }
+}
+    
+    .reviewField{
+        margin-top: 62px;
+    }
+
+    .withNightMode{
+        margin-top: 0px;
+    }
+
+    .row{
+        margin-top: 180px;
+    }
+
+    .list-inline-item{
+        margin-top: 1px;
+    }
+    thead, tr, section, table,
+    tbody, tr, td, ul, li, th{
+      background-color: transparent;
+    }
+
+    @keyframes fadeInMove {
+        from {
+          opacity: 0;
+          transform: translateX(30%);
+        }
+        to {    
+          opacity: 1;
+          transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeOutMove {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        to {
+            opacity: 0;
+            transform: translateX(100%);
+          }
+    }
+
+    .LoadingField{
+        font-family: system-ui;
+        animation: fadeInMove 0.5s ease-out;
+        width: 50%;
+        height: 35px;
+        right: 0;
+        position: absolute;
+        border-width: 1px;
+        background-color: rgba(88, 255, 199, 0.904);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .LoadingField.hide {
+        opacity: 0;
+        transform: translateX(100%);
+        animation: fadeOutMove 0.5s ease-out;
+    }
+    #ItemLink{
+        text-decoration:underline;
+    }
+}

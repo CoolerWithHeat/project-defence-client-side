@@ -1,0 +1,331 @@
+.itemView{
+
+    #TagsOverall{
+        background-color: rgba(165, 165, 165, 0.822);
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .tagElement{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        cursor: pointer;
+
+        #invidualTag{
+            margin-top: 2%;
+            margin-left: 4px;
+            font-size: 15px;
+            padding: 2px;
+            padding-left: 2px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+
+        }
+    }
+    #likeClosure{
+        margin-left: 10px;
+        float: left;
+        cursor: pointer;
+    }
+
+    #LikeButton{
+        
+        @keyframes animateHeartOut{
+            0%{transform:scale(3);}
+            100%{transform:scale(0.9);}
+        }
+
+        cursor: pointer;
+        overflow:visible;
+        animation:animateHeartOut .6s linear forwards ;
+        
+    }
+
+    .userComments{
+
+        .second{
+            width: 350px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 4px;
+            box-shadow: 10px 10px 5px #aaaaaa;
+        }
+        .text1{
+            font-size: 13px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+        .text2{
+            font-size: 13px;
+            font-weight: 500;
+            margin-left: 6px;
+            color: #ffffff;
+        }
+        .text3{
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 4px;
+            color: #ffffff;
+        }
+        .text3o{
+            color: #00a5f4;
+        
+        }
+        .text4{
+            font-size: 13px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+        .text4i{
+            color: #00a5f4;
+        }
+        .text4o{
+            color: white;
+        }
+        .thumbup{
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+        .thumbupo{
+            color: #17a2b8;
+        }
+    }
+    .success{
+        background-color: rgba(0, 255, 213, 0.829)
+    }
+
+    .error{
+        background-color: rgba(255, 44, 29, 0.788)
+    }
+    
+    #MessageClosure{
+        width: 150px;
+        height: 20px;
+    }
+
+    #MessageWindow{
+        @keyframes slide-in {
+            0% {
+              transform: translateY(-1000px);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        width: 100%;
+        margin-left: 150px;
+        right: 0;
+        color: white;
+        animation: slide-in 0.7s both;
+    }
+
+    .cancel-logo {
+        position: relative;
+        width: 5px;
+        height: 5px;
+        cursor: pointer;
+    }
+    
+    .cancel-logo::before,
+
+    .cancel-logo::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 10px;
+        background-color: #141414;
+        top: 5px;
+    }
+    
+    .cancel-logo::before {
+        transform: rotate(45deg);
+    }
+    
+    .cancel-logo::after {
+        transform: rotate(-45deg);
+    }
+    
+}
+
+#ErrorMessage{
+    margin-top: 20%;
+    color: red;
+    text-align: center;
+}
+
+.nightMode-Item{
+
+    div, span, h4, h6, .display-6{
+        color: white;
+    }
+
+
+    #CardBody{
+        border-width: 1px;
+        padding: 15px;
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.116);
+    }
+
+    .cancel-logo {
+        position: relative;
+        width: 5px;
+        height: 5px;
+        cursor: pointer;
+    }
+
+    .cancel-logo::before,
+
+    .cancel-logo::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 9px;
+        background-color: #ffffff;
+        top: 5px;
+    }
+    
+    .cancel-logo::before {
+        transform: rotate(45deg);
+    }
+      
+    .cancel-logo::after {
+        transform: rotate(-45deg);
+    }
+
+    #tagHeader{
+        color: white;
+        font-size: 22px;
+    }
+}
+
+.lightMode-Item{
+
+    div, span, h3, h4, h6, .display-6{
+        color: rgb(0, 0, 0);
+    }
+
+    .userComments{
+        .second{
+            width: 350px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 4px;
+            box-shadow: 10px 10px 5px #969595;
+        }
+        .text1{
+            font-size: 13px;
+            font-weight: 500;
+            color: #000000;
+        }
+        .text2{
+                font-size: 13px;
+                font-weight: 500;
+                margin-left: 6px;
+                color: #000000;
+        }
+        .text3{
+                font-size: 13px;
+                font-weight: 500;
+                margin-right: 4px;
+                color: #000000;
+        }
+        .text3o{
+                color: #00a5f4;
+            
+        }
+        .text4{
+            font-size: 13px;
+            font-weight: 500;
+            color: #fffrgb(0, 0, 0)
+        }}
+
+    .title{
+        color: rgb(0, 0, 0);
+    } 
+
+    #tagHeader{
+        color: white;
+        font-size: 22px;
+    }
+
+    h6{
+        font-weight: 500;
+        font-size: 13px;
+        font-family: system-ui;
+    }
+    
+    #CardBody{
+        border-width: 1px;
+        padding: 15px;
+        box-shadow: 0 0 18px 5px rgba(41, 40, 40, 0.349);
+        border-radius: 9px;
+    }
+    .cancel-logo {
+        position: relative;
+        width: 5px;
+        height: 5px;
+        cursor: pointer;
+    }
+      
+    .cancel-logo::before,
+
+    .cancel-logo::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 9px;
+        background-color: #ffffff;
+        top: 5px;
+    }
+    
+    .cancel-logo::before {
+        transform: rotate(45deg);
+    }
+      
+    .cancel-logo::after {
+        transform: rotate(-45deg);
+    }
+
+    #TagsOverall{
+        background-color: rgb(99, 99, 99);
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .tagElement{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        cursor: pointer;
+
+
+        #invidualTag{
+            color: white;
+            margin-top: 2%;
+            margin-left: 4px;
+            font-size: 15px;
+            padding: 2px;
+            padding-left: 2px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+
+        }
+    }
+}
+
+#commentObject{
+
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 2;
+        }
+    }
+    animation: fadeIn 5s cubic-bezier(0.16, 1, 0.3, 1) ;
+    display: block;
+
+}
