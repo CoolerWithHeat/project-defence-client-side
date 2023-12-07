@@ -1,0 +1,10 @@
+.tag-cloud{
+	width: 32%;
+	@media(max-width:500px){
+		width: 100%;
+	}
+
+	.tag-cloud-tag{
+		cursor: pointer;
+	}
+}
