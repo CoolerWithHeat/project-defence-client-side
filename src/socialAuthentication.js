@@ -1,6 +1,5 @@
 import {GoogleAuthProvider, FacebookAuthProvider, getAuth, getRedirectResult, signInWithRedirect, } from "firebase/auth";
 import { app } from "./firebase"; 
-// import { initializeApp } from "firebase/app";
 import React from "react";
 
 const SocialAuth = ({callBack})=>{
@@ -13,40 +12,10 @@ const SocialAuth = ({callBack})=>{
     };
 
     React.useEffect(() => {
-        // if(localStorage.getItem('authenticationTriggered')){
-            
-        //     Update_auth_status(Main=>true)
-
-        // }
         getRedirectResult(auth)
             .then((ProviderResponse) => {
                 if (ProviderResponse){
-                    
                     callBack(ProviderResponse)
-                    // const ProviderSource = ProviderResponse.providerId;
-                    // const providerName = ProviderSource.split('.')[0];
-                    // const BackendRequest = fetch(GetHost() + '/SignUp/', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //     'Content-Type': 'application/json',
-                    //     'Accept': 'application/json',
-                    //     },
-                    //     body: JSON.stringify({[providerName]: ProviderResponse}),
-                    // })
-                    // .then((Main) => {
-                        
-                    //     if (Main.status === 200) {
-                    //         Main.json().then(UserCreds=>{
-                    //             localStorage.setItem('WebKey', UserCreds.token)
-                    //             return setTimeout(() => {
-                    //                 window.location.pathname = '../Main'
-                    //             }, 333);
-                    //         })
-                    //     }
-                        
-
-                    // })
-
                 }
             }
                 )

@@ -3,7 +3,7 @@ import defaultItem from './assets/img/itemDefault.png'
 import defaultCollection from './assets/img/collectionDefault.jpg'
 import './tagcloud/style.scss'
 import { TagCloud } from 'react-tagcloud'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import React from 'react'
 import { UserSearched_Keyword } from 'globalCollections'
 import getHost from 'host'
