@@ -53,9 +53,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "optionalDependencies": {
-    "typescript": "5.0.4"
-  },
   "overrides": {
     "svgo": "3.0.2",
     "fsevents": "2.3.2",
