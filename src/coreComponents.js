@@ -53,7 +53,6 @@ export function LanugageToggle(){
         update_active(Prev=>!Prev)
         localStorage.setItem('languageFR', value)
     }
-
     return (
         <div id='LanguageBar'>
             <center>
