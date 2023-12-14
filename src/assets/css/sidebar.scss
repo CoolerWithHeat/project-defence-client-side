@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
     .MiniBar{
         float: right;
-        justify-content: right;
+        justify-content:center;
         background-color: rgba(68, 54, 54, 0.548);
         border-style: none;
         a{
@@ -74,6 +74,22 @@
         .card{
             margin-left: 3px;
             cursor: pointer;
+        }
+        #ButtonHeader{
+            color: white;
+            margin: auto;
+            width: 68px;
+            height: 25px;
+            text-align: center;
+            font-size: 11px;
+        }
+        #ButtonHeader-bigger{
+            color: white;
+            margin: auto;
+            width: 68px;
+            height: 25px;
+            text-align: center;
+            font-size: 13px;
         }
     }
 

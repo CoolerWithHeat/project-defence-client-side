@@ -1,10 +1,10 @@
 function getHost(withProtocol = true) {
 
     if (withProtocol) {
-        return 'http://16.171.15.58';
+        return 'https://54.145.45.116';
     } 
     else {
-        return 'ws://16.171.15.58';
+        return 'wss://54.145.45.116';
     }
 }
 

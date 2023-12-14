@@ -128,7 +128,7 @@ export const LanguagePack = createSlice({
         SelectedLanguage: 1,
         translations: {
 
-            0:  {'globalbutton': 'Mondiale', 
+            0:  {'globalbutton': 'Toute', 
                 'personalbutton': 'Propre', 
                 'profilebutton': 'Profil', 
                 'themes': ['Nuità', 'Lumi'], 
@@ -165,7 +165,7 @@ export const LanguagePack = createSlice({
                 'other' : 'autre',
             },
 
-            1 : {'globalbutton': 'Global ', 
+            1 : {'globalbutton': 'All', 
                 'personalbutton': ' Personal', 
                 'profilebutton': 'Profile', 
                 'themes': ['Night', 'Light'], 
