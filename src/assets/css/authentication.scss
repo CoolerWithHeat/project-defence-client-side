@@ -9,7 +9,7 @@ body{
 
 #wholeAuthWindow{
 
-   .font-robo {
+  .font-robo {
     font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   }
   
@@ -64,19 +64,6 @@ body{
     -moz-box-sizing: inherit;
     box-sizing: inherit;
   }
-  
-
-  body,
-  h1, h2, h3, h4, h5, h6,
-  blockquote, p, pre,
-  dl, dd, ol, ul,
-  figure,
-  hr,
-  fieldset, legend {
-    margin: 0;
-    padding: 0;
-  }
-  
 
   li > ol,
   li > ul {
@@ -101,10 +88,7 @@ body{
     border: none;
   }
 
-  .page-wrapper {
-    min-height: 100vh;
-  }
-  
+
   body {
     font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
     font-weight: 400;

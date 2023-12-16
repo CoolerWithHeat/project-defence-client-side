@@ -139,6 +139,8 @@ export function PersonalPage({nightMode}){
         if (request.status == 200){
             localStorage.setItem('savedCollectionID', result.collection.id)
             update_step(2)
+        }else{
+            window.location.pathname = '../../register/';
         }
     }
 
@@ -712,7 +714,6 @@ export function MainBoard(){
         </div>
     )
 }
-
 
 export const Tag = ({tagName})=>{
     return (

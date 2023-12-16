@@ -25,7 +25,6 @@ export const FirstLayerValdation = ()=>{
         const result = await request.json()
 
         if (request.status == 200){
-            console.log(result.token)
             localStorage.setItem('users-token', result.token)
             window.location.pathname = '../main'
         }
@@ -200,9 +199,14 @@ function AuthenticationForm({id}){
         1: <SignUp_Form/>
     } 
 
+    React.useEffect(Main=>{
+        const accessedWidth = window.innerWidth < 768;
+        if (accessedWidth)
+            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+    }, [])
+
     return (
         <div id="wholeAuthWindow">
-            
             <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
                 <div className="wrapper wrapper--w780">
                     <div className="card card-3">
@@ -213,7 +217,6 @@ function AuthenticationForm({id}){
                             <br/>
                             <SocialAuth callBack={SendBack_register}/>
                         </div>
-                        
                     </div>
                 </div>
             </div>

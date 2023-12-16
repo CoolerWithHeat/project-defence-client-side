@@ -189,7 +189,7 @@ function ItemView(){
     React.useEffect(()=>{
         const body = document.body
         body.style.backgroundColor = 'rgb(44, 44, 44)'
-        const socket = new ReconnectingWebSocket(socket_host+`/comments-flow/${itemID.slice(-1)}/`)
+        const socket = new ReconnectingWebSocket(socket_host+`/comments-flow/${itemID}/`)
         socket.onmessage = (flow)=>{
             const new_comment = JSON.parse(flow.data).comment
             console.log(new_comment)
@@ -207,7 +207,7 @@ function ItemView(){
     }
 
     React.useEffect(Main=>{
-        GetItem(itemID.slice(-1))
+        GetItem(itemID)
     }, [])
     
     const processedComments = comments.map(each=>{

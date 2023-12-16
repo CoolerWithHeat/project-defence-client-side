@@ -1,10 +1,10 @@
 function getHost(withProtocol = true) {
 
     if (withProtocol) {
-        return 'https://54.145.45.116';
+        return 'https://mansurdev.store';
     } 
     else {
-        return 'wss://54.145.45.116';
+        return 'wss://mansurdev.store';
     }
 }
 

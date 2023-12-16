@@ -64,15 +64,15 @@ const TagsCloud = ()=>{
     )
 }
 
-const Collection = ({id, name})=>{
+const Collection = ({id, name, image})=>{
     const selectedLanguage = useSelector(Main=>Main.Languages.SelectedLanguage)
     const translations = useSelector(Main=>Main.Languages.translations[selectedLanguage])
     return (
         <div className="box">
-            <a className="image fit"><img src={defaultCollection} alt="" width="600" height="338"/></a>
+            <a className="image fit"><img src={image ? image : defaultCollection} alt="" width="600" height="338"/></a>
             <div className="inner">
                 <h3>{name}</h3>
-                <a href={`\../ItemView/${id}/`} className="button fit" data-poptrox="youtube,800x400">{translations['viewnow']}</a>
+                <a href={`\../collection/${id}/`} className="button fit" data-poptrox="youtube,800x400">{translations['viewnow']}</a>
             </div>
         </div>
     )
@@ -110,23 +110,22 @@ const MainShow = ()=>{
     }
     React.useEffect(Main=>{get_data()}, [])
     const processedItems = latestItems.map(each=><Item id={each.id} name={each.name}/>)
-    const processedCollections = largestCollections.map(each=><Collection id={each.id} name={each.name}/>)
+    const processedCollections = largestCollections.map(each=><Collection id={each.id} name={each.name} image={each.image}/>)
     const tagData = tags.map(each=>{return {value:each, count: Math.floor(Math.random() * (40 - 20 + 1)) + 15}})
     return (
         <div className='showcasePage'>
             <div className="inner">
-                <div className='sectionHeader'>{translations['latestitems']}</div> 
-                <br/>
-                <div className="thumbnails">
-                
-                    {processedItems} 
-
-                </div>
                 <div className='sectionHeader'>{translations['latestcollections']}</div>
                 <br/>
                 <div className="thumbnails">
-            
                     {processedCollections}
+                </div>
+                
+                <div className='sectionHeader'>{translations['latestitems']}</div> 
+                <br/>
+                <div className="thumbnails">
+            
+                    {processedItems} 
 
                 </div>
                 <TagCloud

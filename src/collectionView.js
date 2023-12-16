@@ -26,6 +26,8 @@ const CollectionCard = ({collectionID})=>{
         const result = await request.json()
         if (request.status == 200){
             update_collection(result.collection)
+        }else{
+            window.location.pathname = '\../register'
         }
     }
 
@@ -89,6 +91,8 @@ function InsideCollection({}){
         const result = await request.json()
         if (request.status == 200){
             update_items(result.items)
+        }else{
+            window.location.pathname = '\../register'
         }
     }
 
@@ -181,7 +185,7 @@ function InsideCollection({}){
         return (
             <tr> 
                 <td style={{color:textColor}}>{id}</td>
-                <td style={{color:textColor}}><a id="ItemLink" href={editMode ? null : `../../../collection/${collectionID}/item=${id}/`}>{itemTitle}</a></td>
+                <td style={{color:textColor}}><a id="ItemLink" href={editMode ? null : `../../../ItemView/${id}/`}>{itemTitle}</a></td>
                 <td style={{color:textColor}}>{'You'}</td>
             <td>
                 <ul class="list-inline m-0">
@@ -245,6 +249,8 @@ function InsideCollection({}){
             const result = await request.json();
             if (request.status == 200){
                 update_custom_fields([...result]);
+            }else{
+                window.location.pathname = '\../register'
             }
         }
 
@@ -266,11 +272,7 @@ function InsideCollection({}){
                 update_Completed('Created!')
                 update_additionMode(!additionMode)
             
-            }
-            else if (request.status==500){
-                console.log('insufficient data')
-            }
-            else{
+            }else{
                 window.location.pathname = '\../register'
             }
         }
@@ -315,7 +317,7 @@ function InsideCollection({}){
 
     return (
         <div style={is_nightMode ? DarkMode : LightMode}  id="InsideCollection">
-            <Header header={'inside Collection'} nightMode={is_nightMode}/>
+            <Header hideButtons={true} header={'inside Collection'} nightMode={is_nightMode}/>
                 <section  class="reviewField withNightMode">
                         <div class="container py-5 text-white">
                         

@@ -50,13 +50,12 @@ function Header(props) {
   const [KeyWord, Update_KeyWord] = React.useState();
   const iconRef = React.useRef();
   const socketRef = React.useRef();
+  const SearchRef = React.useRef();
   const textColor = props.nightMode ? 'white' : 'black';
   const iconColor = props.nightMode ? 'black' : 'white';
 
   const Search = ()=>{
     updated_Search_status(!Searched)
-    if (iconRef.current)
-      iconRef.current.style.backgroundColor = 'red'
   }
   
   const toggle = () => {
@@ -93,6 +92,7 @@ function Header(props) {
     else
       updated_recommendedTags([])
   }
+
   async function RequestSearch(data){
     const request = await fetch(host+`/Search/`,
       {
@@ -112,10 +112,6 @@ function Header(props) {
     window.location.href = url.toString();
   }
 
-  React.useEffect(() => {
-    window.addEventListener("resize", updateColor.bind(this));
-  });
-
   React.useEffect(Main=>{
 
     const searchedKeyword = UserSearched_Keyword()
@@ -125,9 +121,9 @@ function Header(props) {
     
     
     const toggler = document.getElementsByClassName('navbar-toggler')[0]
-   setTimeout(() => {
-    toggler.click()
-   }, 333);
+    setTimeout(() => {
+      toggler.click()
+    }, 333);
     
   }, [])
 
@@ -148,8 +144,6 @@ function Header(props) {
     }
   }, [Searched])
 
-
-
   React.useEffect(() => {
     if (
       window.innerWidth < 993 &&
@@ -159,6 +153,16 @@ function Header(props) {
       sidebarToggle.current.classList.toggle("toggled");
     }
   }, [location]);
+  
+  const TriggerSearch = (event)=>{
+    if (event.key === "Enter") {
+      updated_Search_status(!Searched)
+    }
+  }
+
+  React.useEffect(() => {
+    document.addEventListener("keydown", TriggerSearch);
+  }, [])
 
   const processedTags = recommendedTags.map(Each=><div id="SuggestionTag" onClick={()=>SearchByTag(Each)}>{Each}</div>)
 
@@ -186,11 +190,11 @@ function Header(props) {
         </NavbarToggler>
         
         <Collapse isOpen={isOpen} navbar className="justify-content-end">
-            <form>
+            <div>
                 <InputGroup className="no-border">
                   <Input value={KeyWord} style={{color: textColor}} onChange={HandleInputChange} placeholder={`${translations['search']}...`} />
                   <InputGroupAddon addonType="append">
-                      <InputGroupText style={{backgroundColor: props.nightMode ? 'white' : '#5E5E5E', opacity:'80%'}} onClick={Search}>
+                      <InputGroupText ref={SearchRef} style={{backgroundColor: props.nightMode ? 'white' : '#5E5E5E', opacity:'80%'}} onClick={Search}>
                         <i style={{cursor:'pointer', marginLeft:'10px', color: iconColor}} className="nc-icon nc-zoom-split" />
                       </InputGroupText>
                   </InputGroupAddon>
@@ -204,7 +208,7 @@ function Header(props) {
                 </div>
               : null}
 
-            </form>
+            </div>
             
             <div style={{display:props.hideButtons ? 'none' : null}} className={'MiniBar'}>
                 <Dropdown 
@@ -220,7 +224,7 @@ function Header(props) {
                   </DropdownToggle>
                   
                     <DropdownMenu>
-                      <DropdownItem style={{float:'left', position:'absolute', left:'-160px', backgroundColor:'black', color:'white', width:'85%'}} tag="a">Nothing For Now</DropdownItem>
+                      <DropdownItem style={{float:'left', position:'absolute', left:'-160px', backgroundColor:'black', color:'white', width:'85%'}} tag="a">No Alerts</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
                     <div id='ButtonHeader-bigger'>

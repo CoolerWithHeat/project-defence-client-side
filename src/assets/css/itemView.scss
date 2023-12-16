@@ -166,6 +166,7 @@
         border-width: 1px;
         padding: 15px;
         box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.116);
+        max-width: 425px;
     }
 
     .cancel-logo {
@@ -260,7 +261,9 @@
         padding: 15px;
         box-shadow: 0 0 18px 5px rgba(41, 40, 40, 0.349);
         border-radius: 9px;
+        max-width: 425px;
     }
+    
     .cancel-logo {
         position: relative;
         width: 5px;
